@@ -7,19 +7,6 @@ function App() {
 
   const ops = ["/", "*", "+", "-", "."];
 
-  const updateCalc = (value) => {
-    if (
-      (ops.includes(value) && calc === "") ||
-      (ops.includes(value) && ops.includes(calc.slice(-1)))
-    ) {
-      return;
-    }
-    setCalc(calc + value);
-    if (!ops.includes(value)) {
-      setResult(eval(calc + value).toString());
-    }
-  };
-
   const createDigits = () => {
     const digits = [];
 
@@ -33,23 +20,36 @@ function App() {
     return digits;
   };
 
+  const updateCalc = (value) => {
+    if (
+      (ops.includes(value) && calc === "") ||
+      (ops.includes(value) && ops.includes(calc.slice(-1)))
+    ) {
+      return;
+    }
+    setCalc(calc + value);
+    if (!ops.includes(value)) {
+      setResult(eval(calc + value).toString());
+    }
+  };
+
   const calculate = () => {
     setCalc(eval(calc).toString());
   };
 
   const deleteLast = () => {
     if (calc == "") {
-      return;
     }
     const value = calc.slice(0, -1);
 
     setCalc(value);
   };
+
   return (
     <div className="App">
       <div className="calculator">
         <div className="display">
-          {result ? <span>({result})</span> : ""}
+          <span>{result ? "(" + result + ")" : ""}</span>
           {calc || "0"}
         </div>
         <div className="operators">
@@ -70,5 +70,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
