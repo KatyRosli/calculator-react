@@ -32,66 +32,89 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <div className="screen"></div>
-        <div className="btn" onClick={reset}>
-          AC
-        </div>
-        <div className="btn" onClick={percent}>
-          %
-        </div>
-        <div className="btn" onClick={minusPlus}>
-          +/-
-        </div>
-        <div className="btn" onClick={operatorType}>
-          /
-        </div>
-        <div className="btn" onClick={inputNum}>
-          7
-        </div>
-        <div className="btn" onClick={inputNum}>
-          8
-        </div>
-        <div className="btn" onClick={inputNum}>
-          9
-        </div>
-        <div className="btn" onClick={operatorType}>
-          X
-        </div>
-        <div className="btn" onClick={inputNum}>
-          4
-        </div>
-        <div className="btn" onClick={inputNum}>
-          5
-        </div>
-        <div className="btn" onClick={inputNum}>
-          6
-        </div>
-        <div className="btn" onClick={operatorType}>
-          +
-        </div>
-        <div className="btn" onClick={inputNum}>
-          1
-        </div>
-        <div className="btn" onClick={inputNum}>
-          2
-        </div>
-        <div className="btn" onClick={inputNum}>
-          3
-        </div>
-        <div className="btn" onClick={operatorType}>
-          -
-        </div>
-        <div className="btn" onClick={inputNum}>
-          0
-        </div>
-        <div className="btn" onClick={inputNum}>
-          .
-        </div>
-        <div className="btn" onClick={equals}>
-          =
+      <div className="app-card">
+        <div className="container">
+          <div className="screen"></div>
+          <div className="btn" onClick={reset}>
+            AC
+          </div>
+          <div className="btn" onClick={percent}>
+            %
+          </div>
+          <div className="btn" onClick={minusPlus}>
+            +/-
+          </div>
+          <div className="btn" onClick={operatorType}>
+            /
+          </div>
+          <div className="btn" onClick={inputNum}>
+            7
+          </div>
+          <div className="btn" onClick={inputNum}>
+            8
+          </div>
+          <div className="btn" onClick={inputNum}>
+            9
+          </div>
+          <div className="btn" onClick={operatorType}>
+            x
+          </div>
+          <div className="btn" onClick={inputNum}>
+            4
+          </div>
+          <div className="btn" onClick={inputNum}>
+            5
+          </div>
+          <div className="btn" onClick={inputNum}>
+            6
+          </div>
+          <div className="btn" onClick={operatorType}>
+            +
+          </div>
+          <div className="btn" onClick={inputNum}>
+            1
+          </div>
+          <div className="btn" onClick={inputNum}>
+            2
+          </div>
+          <div className="btn" onClick={inputNum}>
+            3
+          </div>
+          <div className="btn" onClick={operatorType}>
+            -
+          </div>
+          <div className="btn zero" onClick={inputNum}>
+            0
+          </div>
+          <div className="btn" onClick={inputNum}>
+            .
+          </div>
+          <div className="btn" onClick={equals}>
+            =
+          </div>
         </div>
       </div>
+      <footer>
+        Open sourced on{" "}
+        <a
+          href="https://github.com/KatyRosli/calculator-react"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github"
+        >
+          Github{" "}
+        </a>
+        by
+        <a
+          href="https://www.katyrosli.com"
+          target="_blank"
+          rel="nopener noreferrer"
+          className="name"
+        >
+          {" "}
+          Katy Rosli
+        </a>
+      </footer>
     </div>
   );
 }
