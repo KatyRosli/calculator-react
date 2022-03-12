@@ -68,9 +68,19 @@ function App() {
     setCurState("");
   };
 
-  const minusPlus = () => {};
+  const minusPlus = () => {
+    if (curState.charAt(0) === "-") {
+      setCurState(curState.substring(1));
+    } else {
+      setCurState("-" + curState);
+    }
+  };
 
-  const percent = () => {};
+  const percent = () => {
+    preState
+      ? setCurState(String((parseFloat(curState) / 100) * preState))
+      : setCurState(String(parseFloat(curState) / 100));
+  };
 
   const reset = () => {
     setPreState("");
