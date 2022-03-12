@@ -42,7 +42,7 @@ h1 {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 2px solid rgba(255, 255, 255, 0.3);
-  margin-top: 88px;
+  margin-top: 48px;
   padding: 8px;
   max-width: 906px;
 }
@@ -91,7 +91,7 @@ h1 {
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 48px;
   margin-bottom: 80px;
   font-size: 16px;
   text-align: center;
