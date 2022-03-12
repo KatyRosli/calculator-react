@@ -28,10 +28,11 @@ body {
 }
 
 h1 {
-  margin-top: 88px;
+  margin-top: 64px;
   color: var(--primary-color);
   font-size: 32px;
   opacity: 0.6;
+  text-align: center;
 }
 
 .app-card {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import NumberFormat from "react-number-format";
 import "./App.css";
 
 function App() {
@@ -20,22 +21,83 @@ function App() {
     setTotal(false);
   };
 
-  const operatorType = (e) => {};
+  useEffect(() => {
+    setInput(curState);
+  }, [curState]);
 
-  const equals = (e) => {};
+  useEffect(() => {
+    setInput("0");
+  }, []);
+
+  const operatorType = (e) => {
+    setTotal(false);
+    setOperator(e.target.innerText);
+    if (curState === "") return;
+    if (preState !== "") {
+      equals();
+    } else {
+      setPreState(curState);
+      setCurState("");
+    }
+  };
+
+  const equals = (e) => {
+    if (e?.target.innerText === "=") {
+      setTotal(true);
+    }
+
+    let cal;
+    switch (operator) {
+      case "/":
+        cal = String(parseFloat(preState) / parseFloat(curState));
+        break;
+      case "+":
+        cal = String(parseFloat(preState) + parseFloat(curState));
+        break;
+      case "x":
+        cal = String(parseFloat(preState) * parseFloat(curState));
+        break;
+      case "-":
+        cal = String(parseFloat(preState) - parseFloat(curState));
+        break;
+      default:
+        return;
+    }
+    setInput("");
+    setPreState(cal);
+    setCurState("");
+  };
 
   const minusPlus = () => {};
 
   const percent = () => {};
 
-  const reset = () => {};
+  const reset = () => {
+    setPreState("");
+    setCurState("");
+    setInput("0");
+  };
 
   return (
     <div className="App">
       <h1> React JS Calculator App</h1>
       <div className="app-card">
         <div className="container">
-          <div className="screen"></div>
+          <div className="screen">
+            {input !== "" || input === "0" ? (
+              <NumberFormat
+                value={input}
+                displayType={"text"}
+                thousandSeparator={true}
+              />
+            ) : (
+              <NumberFormat
+                value={preState}
+                displayType={"text"}
+                thousandSeparator={true}
+              />
+            )}
+          </div>
           <div className="btn" onClick={reset}>
             AC
           </div>
