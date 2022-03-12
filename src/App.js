@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1> React JS Calculator App</h1>
       <div className="app-card">
         <div className="container">
           <div className="screen"></div>
